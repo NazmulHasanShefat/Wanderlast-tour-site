@@ -2,8 +2,8 @@
 
 # create js sniped
 Go to your vs code
-- press `Ctrl + Shift + P` and write `Preferences: Configure User Snippets`
-- go to `javaScriptreact.json`/`javascriptreact` or when you using typeScript `typescriptreact.json`/`typescriptreact`
+- press `Ctrl + Shift + P` and search `Preferences: Configure Snippets` or  `Preferences: Configure User Snippets`
+- Go to or search to the top bar `javaScriptreact.json`/`javascriptreact` or when you using typeScript `typescriptreact.json`/`typescriptreact`
 
 #### And paste this code
 ```json

@@ -1,13 +1,27 @@
-import { FieldError, Input, Label, TextField, Button } from "@heroui/react";
+"use client"
+
+import { FieldError, Input, Label, TextField } from "@heroui/react";
 import SocialSignUp from "@/components/SocialSignUp/SocialSignUp";
-import { userRegister } from "@/lib/actions/SocialAction";
+import { userRegister } from "@/lib/actions/actions";
+import { useActionState } from "react";
+import { redirect } from "next/navigation";
 
 export default function RegisterPage() {
-  return (
+   
+   const [state, formAction, isPending] = useActionState(userRegister, null);
+   if(state?.success === true){
+    redirect("/")
+   }
+   if(state){
+     console.log(state)
+   }
+   
+
+   return (
     <>
       <div className="w-full max-w-xl mx-auto">
         <h1 className="text-5xl font-bold text-center">Register Now</h1>
-        <form action={userRegister} method="POST" className="p-10 space-y-8">
+        <form action={formAction} className="p-10 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Destination Name */}
             <div className="md:col-span-2">
@@ -63,7 +77,7 @@ export default function RegisterPage() {
             type="submit"
             className="text-xl bg-cyan-500 text-white py-2 px-4 cursor-pointer rounded-lg w-full border border-gray-300 flex items-center justify-center gap-3 mb-3"
           >
-            Regiter
+            {isPending ? "procissing": "Register"}
           </button>
         </form>
         <SocialSignUp />

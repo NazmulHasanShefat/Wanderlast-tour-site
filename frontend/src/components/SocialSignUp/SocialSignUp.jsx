@@ -1,10 +1,10 @@
-import { SocialAction } from "@/lib/actions/SocialAction";
+import { SocialAction } from "@/lib/actions/actions";
 import { BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
 export default function SocialSignUp() {
   return (
-    <form action={SocialAction} method="POST" className="flex flex-col items-center gap-3 mb-5 px-10">
+    <form action={SocialAction} className="flex flex-col items-center gap-3 mb-5 px-10">
       <button
         type="submit"
         name="action"

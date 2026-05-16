@@ -1,13 +1,13 @@
 import { FieldError, Input, Label, TextField, Button } from "@heroui/react";
-import { FcGoogle } from "react-icons/fc";
+import SocialSignUp from "@/components/SocialSignUp/SocialSignUp";
+import { userRegister } from "@/lib/actions/SocialAction";
 
 export default function RegisterPage() {
-  const isPending = {};
   return (
     <>
       <div className="w-full max-w-xl mx-auto">
         <h1 className="text-5xl font-bold text-center">Register Now</h1>
-        <form className="p-10 space-y-8">
+        <form action={userRegister} method="POST" className="p-10 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Destination Name */}
             <div className="md:col-span-2">
@@ -65,16 +65,8 @@ export default function RegisterPage() {
           >
             Regiter
           </button>
-
-          <button
-            type="submit"
-            variant="outline"
-            className="text-xl py-2 px-4 cursor-pointer rounded-lg w-full border border-gray-300 flex items-center justify-center gap-3"
-          >
-            <FcGoogle size={35} />
-            Continue with google
-          </button>
         </form>
+        <SocialSignUp />
       </div>
     </>
   );

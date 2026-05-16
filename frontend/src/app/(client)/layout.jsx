@@ -4,7 +4,7 @@ import Navbar from "@/components/header/Navbar";
 export default function ClientLayout({ children }) {
   return (
     <>
-    <Navbar />
+      <Navbar />
       {children}
       <Footer />
     </>
